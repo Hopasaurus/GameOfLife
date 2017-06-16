@@ -61,9 +61,9 @@ namespace ConwayTest
         public void Test_AddingLiveNeighborOnNorthSide_IncreasesLivingNeighborCount()
         {
             var cell = new Cell();
-            var livingSouthernNeighbor = new Cell();
+            var livingNorthernNeighbor = new Cell();
 
-            cell.AddNeighbor(livingSouthernNeighbor, Direction.North);
+            cell.AddNeighbor(livingNorthernNeighbor, Direction.North);
 
             Assert.AreEqual(1, cell.CountLivingNeighbors());
         }
@@ -77,6 +77,19 @@ namespace ConwayTest
 
             cell.AddNeighbor(livingSouthernNeighbor, Direction.South);
             cell.AddNeighbor(livingNorthernNeighbor, Direction.North);
+
+            Assert.AreEqual(2, cell.CountLivingNeighbors());
+        }
+
+        [Test]
+        public void Test_AddingLiveNeighborToNorthWest_IncreasesLivingNeighborCount()
+        {
+            var cell = new Cell();
+            var livingNorthernNeighbor = new Cell();
+            var livingNorthWesternNeighbor = new Cell();
+
+            cell.AddNeighbor(livingNorthernNeighbor, Direction.North);
+            livingNorthWesternNeighbor.AddNeighbor(livingNorthWesternNeighbor, Direction.West);
 
             Assert.AreEqual(2, cell.CountLivingNeighbors());
         }
