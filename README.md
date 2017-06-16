@@ -19,3 +19,14 @@ Time is constrained so will be running in three Pomodoro's to get effective use 
 
 x. Simple cell grid builder
 x. Generation runner (move from current to next gen)
+
+
+Got cell counting far enough along that I would like to start making a grid builder.
+
+One outstanding issue with the cell is verification of linkage.
+    when adding a cell should it check with it's neighbors and do some discovery and automatically link?
+    also should the cell be able to detect issues with inconsistency?
+    or is that the grid manager's duty?
+
+Ran out of time for now, interested in continuing soon.
+
