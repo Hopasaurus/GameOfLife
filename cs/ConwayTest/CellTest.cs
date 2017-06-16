@@ -82,6 +82,20 @@ namespace ConwayTest
         }
 
         [Test]
+        public void Test_NorthSouthCount_OnlyCountsLivingNeighborsToNorthAndSouth()
+        {
+            var cell = new Cell();
+            var livingNeighbor = new Cell();
+
+            cell.AddNeighbor(livingNeighbor, Direction.North);
+            cell.AddNeighbor(livingNeighbor, Direction.South);
+            cell.AddNeighbor(livingNeighbor, Direction.East);
+            cell.AddNeighbor(livingNeighbor, Direction.West);
+
+            Assert.AreEqual(2, cell.CountLivingNorthSouthNeighbors());
+        }
+
+        [Test, Ignore("Need to be able to request north/south count first")]
         public void Test_AddingLiveNeighborToNorthWest_IncreasesLivingNeighborCount()
         {
             var cell = new Cell();

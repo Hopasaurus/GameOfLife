@@ -55,5 +55,10 @@ namespace Conway
         {
             _neighbors.Add(direction, neighbor);
         }
+
+        public int CountLivingNorthSouthNeighbors()
+        {
+            return _neighbors.Count(n => n.Value.IsAlive() && n.Key == Direction.North || n.Key == Direction.South);
+        }
     }
 }
