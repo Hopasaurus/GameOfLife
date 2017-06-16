@@ -22,14 +22,12 @@ namespace ConwayTest
             Assert.IsFalse(cell.IsAlive());
         }
 
-        //  Oops got ahead of our selfs, need to know if we are alive first.
+        [Test]
+        public void Test_CountLivingNeighbors_ReturnsZero()
+        {
+            var cell = new Cell();
 
-//        [Test]
-//        public void Test_CountLivingNeighbors_ReturnsZero()
-//        {
-//            var cell = new Cell();
-//
-//            Assert.AreEqual(0, cell.CountLivingNeighbors());
-//        }
+            Assert.AreEqual(0, cell.CountLivingNeighbors());
+        }
     }
 }

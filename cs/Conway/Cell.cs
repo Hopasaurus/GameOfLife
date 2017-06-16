@@ -9,15 +9,21 @@
     public class Cell
     {
         private CellStatus _status;
+        
+        
         // TODO:  (things I currenlty think this class needs)
         // - Count living neighbors
-        // - Construct
         // - Add neighbor
 
         // Things we might need later
         // - grid manager (build and maintain the grid)
         // - rules
         // - presentation - draw something to look at.
+
+        public Cell()
+        {
+            _status = CellStatus.Living;
+        }
 
         public Cell(CellStatus initialStatus)
         {
@@ -29,9 +35,9 @@
             return _status == CellStatus.Living;
         }
 
-//        public int CountLivingNeighbors()
-//        {
-//            return 0;
-//        }
+        public int CountLivingNeighbors()
+        {
+            return 0;
+        }
     }
 }
