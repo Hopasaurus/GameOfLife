@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Conway
@@ -48,7 +49,14 @@ namespace Conway
 
         public int CountLivingNeighbors()
         {
-            return _neighbors.Count(x => x.Value.IsAlive());
+            return _neighbors.Count(x => x.Value.IsAlive()) + CountNeighborsNeighbors();
+        }
+
+        private int CountNeighborsNeighbors()
+        {
+            return
+                _neighbors.Where(n => n.Key == Direction.West || n.Key == Direction.East)
+                    .Sum(x => x.Value.CountLivingNorthSouthNeighbors());
         }
 
         public void AddNeighbor(Cell neighbor, Direction direction)
