@@ -14,6 +14,8 @@ Time is constrained so will be running in three Pomodoro's to get effective use 
 1. Project setup and start a cell class
     - apparently I was too optimistic pomo 2 is still working on the cell class.
 2. Cell: Count living neighbors
+    - acheived adding and counting of cardinal neighbors (N,E,S,W)
+3. Cell: Count inter-cardinal neighbors (NW, SW, NE, SE) and wrap up cell class.
 
 x. Simple cell grid builder
 x. Generation runner (move from current to next gen)
