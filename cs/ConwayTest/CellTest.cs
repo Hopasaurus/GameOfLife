@@ -7,11 +7,29 @@ namespace ConwayTest
     public class CellTest
     {
         [Test]
-        public void SanityTest()
+        public void Test_GivenLivingCell_AliveReturnsTrue()
         {
-            var cell = new Cell();
+            var cell = new Cell(CellStatus.Living);
 
-            Assert.AreEqual(1, cell.foo(1));
+            Assert.IsTrue(cell.IsAlive());
         }
+
+        [Test]
+        public void Test_GivenDeadCell_AliveReturnsFalse()
+        {
+            var cell = new Cell(CellStatus.Dead);
+
+            Assert.IsFalse(cell.IsAlive());
+        }
+
+        //  Oops got ahead of our selfs, need to know if we are alive first.
+
+//        [Test]
+//        public void Test_CountLivingNeighbors_ReturnsZero()
+//        {
+//            var cell = new Cell();
+//
+//            Assert.AreEqual(0, cell.CountLivingNeighbors());
+//        }
     }
 }
