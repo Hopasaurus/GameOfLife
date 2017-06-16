@@ -1,4 +1,8 @@
-﻿namespace Conway
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+
+namespace Conway
 {
     public enum CellStatus
     {
@@ -6,14 +10,21 @@
         Dead,
     }
 
+    public enum Direction
+    {
+        North,
+        East,
+        South,
+        West,
+    }
+
     public class Cell
     {
         private CellStatus _status;
-        
+        private Dictionary<Direction, Cell> _neighbors = new Dictionary<Direction, Cell>();
         
         // TODO:  (things I currenlty think this class needs)
-        // - Count living neighbors
-        // - Add neighbor
+        // Ask neighbors about the status of their neighbors
 
         // Things we might need later
         // - grid manager (build and maintain the grid)
@@ -37,7 +48,12 @@
 
         public int CountLivingNeighbors()
         {
-            return 0;
+            return _neighbors.Count(x => x.Value.IsAlive());
+        }
+
+        public void AddNeighbor(Cell neighbor, Direction direction)
+        {
+            _neighbors.Add(direction, neighbor);
         }
     }
 }
