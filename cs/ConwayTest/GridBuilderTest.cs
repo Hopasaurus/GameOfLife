@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Conway;
+﻿using Conway;
 using NUnit.Framework;
 
 namespace ConwayTest
@@ -22,9 +17,9 @@ namespace ConwayTest
     {
 
         [Test]
-        public void Test_GridBuilder()
+        public void Test_GridBuilder_SingleCellGrid_BuildsGrid()
         {
-            var grid = GridBuilder.Build(0, 0);
+            var rootCell = GridBuilder.Build(1, 1);
         }
     }
 }

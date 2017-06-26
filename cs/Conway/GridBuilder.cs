@@ -2,9 +2,9 @@
 {
     public class GridBuilder
     {
-        public static Grid Build(int width, int height)
+        public static Cell Build(int width, int height)
         {
-            return new Grid();
+            return new Cell();
         }
     }
 }
