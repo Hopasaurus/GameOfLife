@@ -17,8 +17,15 @@ Time is constrained so will be running in three Pomodoro's to get effective use 
     - acheived adding and counting of cardinal neighbors (N,E,S,W)
 3. Cell: Count inter-cardinal neighbors (NW, SW, NE, SE) and wrap up cell class.
 
+Pomodoros:
+4. Rules: Create a rule processor that will decide cell status for next generation.
+	- 
+
+
+
 Working Now:
- - clean up and planning.
+x. Rules
+	- Take cell information and yeild a new status for the cell.
 
 Up Next:
 x. Simple cell grid builder
@@ -34,8 +41,6 @@ x. Simple cell grid builder
 
 x. Generation runner (move from current to next gen)
 	- Cause a grid to progress from current gen to next gen
-x. Rules
-	- Take cell information and yeild a new status for the cell.
 x. Presentation
 	- Provide visual on running the simulation.
 
