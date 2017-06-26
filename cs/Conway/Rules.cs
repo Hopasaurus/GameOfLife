@@ -4,10 +4,10 @@
     {
         public static CellStatus NextStatus(Cell cell)
         {
-            return LiveCellShouldStayAlive(cell) ? CellStatus.Living : CellStatus.Dead;
+            return CellShouldBeAlive(cell) ? CellStatus.Living : CellStatus.Dead;
         }
 
-        private static bool LiveCellShouldStayAlive(Cell cell)
+        private static bool CellShouldBeAlive(Cell cell)
         {
             var livingNeighbors = cell.CountLivingNeighbors();
 
