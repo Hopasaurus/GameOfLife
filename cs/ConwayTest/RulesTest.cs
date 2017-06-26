@@ -33,6 +33,17 @@ namespace ConwayTest
             Assert.AreEqual(CellStatus.Dead, result);
         }
 
+        [TestCase(2)]
+        [TestCase(3)]
+        public void Test_LiveCellWithTwoOrThreeNeighbors_Lives(int neighbors)
+        {
+            var cell = SetupCell(CellStatus.Living, neighbors);
+
+            var result = Rules.NextStatus(cell);
+
+            Assert.AreEqual(CellStatus.Living, result);
+        }
+
         [TestCase(4)]
         [TestCase(5)]
         [TestCase(6)]
