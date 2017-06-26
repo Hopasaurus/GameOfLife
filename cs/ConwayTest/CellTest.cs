@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using Conway;
+﻿using Conway;
 using NUnit.Framework;
 
 namespace ConwayTest
@@ -7,14 +6,6 @@ namespace ConwayTest
     [TestFixture]
     public class CellTest
     {
-        // TODO: what to do when adding a neighbor where there is one already?
-        //  - I suspect that it in current state it will replace the neighbor
-        //  - UPDATE: it will throw an exception and I think I am ok with that for now.
-        //  - will need to think about this and decide what SHOULD happen. (later)
-        //  - These notes are temporary and will be removed once this decision is final.
-        //  - Temporary in the non-classic sense of the work (Classic meaning of temporary is 
-        //       roughly equivelent to permanent.)
-
         [Test]
         public void Test_GivenLivingCell_AliveReturnsTrue()
         {
