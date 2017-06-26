@@ -11,7 +11,7 @@
         {
             var livingNeighbors = cell.CountLivingNeighbors();
 
-            return livingNeighbors == 2 || livingNeighbors == 3;
+            return (livingNeighbors == 2 && cell.IsAlive()) || livingNeighbors == 3;
         }
     }
 }
