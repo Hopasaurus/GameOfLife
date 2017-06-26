@@ -104,6 +104,19 @@ namespace ConwayTest
         }
 
         [Test]
+        public void Test_AddingDeadNeighborToSouthWest_DoesNotIncreaseLivingNeighborCount()
+        {
+            var cell = new Cell();
+            var livingWesternNeighbor = new Cell();
+            var deadSouthWesternNeighbor = new Cell(CellStatus.Dead);
+
+            cell.AddNeighbor(livingWesternNeighbor, Direction.West);
+            livingWesternNeighbor.AddNeighbor(deadSouthWesternNeighbor, Direction.South);
+
+            Assert.AreEqual(1, cell.CountLivingNeighbors());
+        }
+
+        [Test]
         public void Test_AddingFullComplimentOfLivingNeigbors_YieldsEight()
         {
             var cell = new Cell();
