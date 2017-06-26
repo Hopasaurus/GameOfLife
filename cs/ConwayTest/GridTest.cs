@@ -8,6 +8,10 @@ namespace ConwayTest
     // this grid will be a simple rectangular grid
     // future ideas include a 3d grid (think about rubiks cube) 
 
+
+    // LOOK ... that is TWO responsibilities.... we can't do that!
+    //  spawning a grid builder class, back here in a bit.
+
     // Building the grid means instantiating and linking the cells 
     //  that make up the grid
     
