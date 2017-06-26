@@ -21,6 +21,7 @@ namespace ConwayTest
         // x Live cell with two or three neighbors lives
         // x Live cell with more than three neighbors dies
         // _ Dead cell with three neighbors comes to life
+        // *** implied rule Dead cell with other than three neighbors stays dead
 
         [TestCase(0)]
         [TestCase(1)]
@@ -58,6 +59,22 @@ namespace ConwayTest
             Assert.AreEqual(CellStatus.Dead, result);
         }
 
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(4)]
+        [TestCase(5)]
+        [TestCase(6)]
+        [TestCase(7)]
+        [TestCase(8)]
+        public void Test_DeadCellWithOtherThanThreeNeighbors_StaysDead(int neighbors)
+        {
+            var cell = SetupCell(CellStatus.Dead, neighbors);
+
+            var result = Rules.NextStatus(cell);
+
+            Assert.AreEqual(CellStatus.Dead, result);
+        }
 
         private static Cell SetupCell(CellStatus status, int livingNeighbors)
         {
