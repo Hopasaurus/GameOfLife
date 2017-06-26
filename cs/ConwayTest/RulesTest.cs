@@ -18,7 +18,7 @@ namespace ConwayTest
         
         // Rules are:
         // x Live cell with less than two neighbors dies
-        // _ Live cell with two or three neighbors lives
+        // x Live cell with two or three neighbors lives
         // x Live cell with more than three neighbors dies
         // _ Dead cell with three neighbors comes to life
 
