@@ -86,6 +86,35 @@ namespace ConwayTest
             Assert.AreEqual(CellStatus.Living, result);
         }
 
+        [TestCase(CellStatus.Living, 0, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 1, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 2, CellStatus.Living)]
+        [TestCase(CellStatus.Living, 3, CellStatus.Living)]
+        [TestCase(CellStatus.Living, 4, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 5, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 6, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 7, CellStatus.Dead)]
+        [TestCase(CellStatus.Living, 8, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 0, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 1, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 2, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 3, CellStatus.Living)]
+        [TestCase(CellStatus.Dead, 4, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 5, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 6, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 7, CellStatus.Dead)]
+        [TestCase(CellStatus.Dead, 8, CellStatus.Dead)]
+        public void Test_AllTheThingsInOneMassiveTest(CellStatus initialStatus, int livingNeighbors,
+            CellStatus expectedStatus)
+        {
+            var cell = SetupCell(initialStatus, livingNeighbors);
+
+            var result = Rules.NextStatus(cell);
+
+            Assert.AreEqual(expectedStatus, result);
+        }
+
+
         private static Cell SetupCell(CellStatus status, int livingNeighbors)
         {
 
