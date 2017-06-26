@@ -76,6 +76,16 @@ namespace ConwayTest
             Assert.AreEqual(CellStatus.Dead, result);
         }
 
+        [TestCase(3)]
+        public void Test_DeadCellWithThreeNeighbors_BecomesAlive(int neighbors)
+        {
+            var cell = SetupCell(CellStatus.Dead, neighbors);
+
+            var result = Rules.NextStatus(cell);
+
+            Assert.AreEqual(CellStatus.Living, result);
+        }
+
         private static Cell SetupCell(CellStatus status, int livingNeighbors)
         {
 
