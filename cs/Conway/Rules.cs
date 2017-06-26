@@ -7,5 +7,10 @@ namespace Conway
         public static void Foo()
         {
         }
+
+        public static CellStatus NextStatus(Cell cell)
+        {
+            return CellStatus.Dead;
+        }
     }
 }
